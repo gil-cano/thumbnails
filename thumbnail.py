@@ -14,7 +14,7 @@ draw.ellipse((0, 0) + size, fill=255)
 
 thumb_size = 98, 98
 padding = 8
-paths = ['investigadores', 'tecnicos-academicos']
+paths = ['investigadores', 'tecnicos-academicos', 'posdoc', 'catedras-conacyt']
 
 
 def thumbnails(path):
@@ -36,16 +36,18 @@ def thumbnails(path):
                 path=directory, name=name))
 
 
-def makeCollage(sede='C.U.', cols=10, width=1068):
+def makeCollage(sede='C.U.', cols=10):
     path = 'cuadrados/investigadores'
     path2 = 'cuadrados/tecnicos-academicos'
+    # path2 = 'cuadrados/posdoc'
+    # path2 = 'cuadrados/catedras-conacyt'
     inv = glob.glob('{p}/{s}/*.png'.format(p=path, s=sede))
     tec = glob.glob('{p}/{s}/*.png'.format(p=path2, s=sede))
     n = len(inv) + len(tec)
     rows = n/cols + (n % cols > 0)
     w = cols * thumb_size[0] + (cols + 1) * padding
     h = rows * thumb_size[1] + (rows + 1) * padding
-    collage = Image.new('RGB', (w, h), color="white")
+    collage = Image.new('RGBA', (w, h))
     x = y = 0
     for i, filename in enumerate(inv + tec):
         im = Image.open(filename)
@@ -56,9 +58,12 @@ def makeCollage(sede='C.U.', cols=10, width=1068):
 
 
 if __name__ == '__main__':
-    # for path in paths:
-    #     thumbnails(path)
-    makeCollage(cols=10)
+    for path in paths:
+        thumbnails(path)
+    makeCollage(cols=9)
     makeCollage(sede='Cuernavaca', cols=8)
     makeCollage(sede='Juriquilla', cols=3)
     makeCollage(sede='Oaxaca', cols=3)
+    # makeCollage(cols=5)
+    # makeCollage(sede='Cuernavaca', cols=5)
+    # makeCollage(sede='Juriquilla', cols=3)
