@@ -12,9 +12,9 @@ paths = ['investigadores', 'tecnicos-academicos', 'posdoc', 'catedras-conacyt']
 
 def makecollage(sede='CU', cols=10):
     """Create an image from small images."""
-    path = 'cuadrados/2015/investigadores'
-    path2 = 'cuadrados/tecnicos-academicos'
-    # path2 = 'cuadrados/posdoc'
+    path = 'cuadrados/investigadores'
+    # path2 = 'cuadrados/2015/tecnicos-academicos'
+    path2 = 'cuadrados/2015/posdoc'
     # path2 = 'cuadrados/catedras-conacyt'
     inv = glob.glob('{p}/{s}/*.png'.format(p=path, s=sede))
     tec = glob.glob('{p}/{s}/*.png'.format(p=path2, s=sede))
@@ -34,11 +34,17 @@ def makecollage(sede='CU', cols=10):
 
 if __name__ == '__main__':
     # investigadores
-    makecollage()
-    makecollage(sede='Cuernavaca', cols=8)
-    makecollage(sede='Juriquilla', cols=3)
-    makecollage(sede='Oaxaca', cols=3)
+    # makecollage()
+    # makecollage(sede='Cuernavaca', cols=8)
+    # makecollage(sede='Juriquilla', cols=3)
+    # makecollage(sede='Oaxaca', cols=3)
 
-    # makeCollage(cols=5)
-    # makeCollage(sede='Cuernavaca', cols=5)
-    # makeCollage(sede='Juriquilla', cols=3)
+    # tecnicos
+    # makecollage(cols=4)
+    # makecollage(sede='Cuernavaca', cols=5)
+
+    # posdoc
+    makecollage(cols=3)
+    makecollage(sede='Cuernavaca', cols=1)
+    makecollage(sede='Juriquilla', cols=1)
+    makecollage(sede='Oaxaca', cols=2)
