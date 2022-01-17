@@ -10,14 +10,13 @@ Installation
 
     $ git clone https://github.com/gil-cano/thumbnails.git
     $ cd thumbnails
-    $ virtualenv-3.5 .
-    $ source bin/activate
-    (papiro)$ pip install -r requirements.txt
+    $ pipenv install
+    $ pipenv shell
 
 Use
 ---
 
 .. code:: bash
 
-    (papiro)$ python thumbnail.py
-    (papiro)$ python collage.py
+    (thumbnails)$ python thumbnail.py
+    (thumbnails)$ python collage.py
