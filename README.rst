@@ -20,3 +20,12 @@ Use
 
     (thumbnails)$ python thumbnail.py
     (thumbnails)$ python collage.py
+
+
+Informe
+-------
+
+Para obtener las imagenes de infoMatem usamos el script
+
+https://github.com/gil-cano/matem-buildout/blob/master/Extensions/download_pdfs_images.py
+
